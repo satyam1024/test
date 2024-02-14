@@ -1,0 +1,166 @@
+body {
+    max-width: 100vw;
+
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  
+    margin: 0px;
+    padding: 0px;
+    
+}
+a{
+    text-decoration: none;
+    
+}
+nav {
+    background-color: forestgreen;
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-end; /* Align items to the right */
+  }
+
+  nav a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
+  nav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+
+form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10%;
+}
+
+input {
+    width: 70%;
+    height: 30%;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+    box-sizing: border-box;
+}
+
+button {
+    width: 30%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 0 4px 4px 0;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+.main {
+    min-height: 80vh;
+    max-width: 100%;
+    background-size: cover; 
+    padding: 5% 5%;
+    margin: none;
+    border: solid black 0.5vw;
+    background: whitesmoke url('pic/b2.jpg') no-repeat ;
+}
+.intro{
+    font-size:4vw;
+    font-style: bold;
+    text-align: center;
+    color: maroon;
+    font-weight: bold;
+   align-self: center;
+   margin-bottom: 10vh;
+}
+.imp{
+    font-size:1vw;
+    font-style: bold;
+    text-align: center;
+    color: rgb(226, 196, 150);
+   align-self: center;
+   
+}
+.content{
+    display: flex;
+    justify-content: space-evenly;
+}
+#error{
+    font-size: 5vh;
+    display: none;
+    text-align: center;
+    color: maroon;
+    font-weight: bold;
+   align-self: center;
+   border: solid purple 5px;
+   border-radius: 7%;
+}
+#summaryContainer{
+    width: 40%;
+    display: none;
+    text-align: center;
+    font-weight: bold;
+    color: maroon;
+
+   align-self: center;
+   margin-bottom: 10vh;
+   border: solid purple 5px;
+   border-radius: 7%;
+
+}
+#notesContainer{
+    display: none;
+    width: 40%;
+    border: solid purple 5px;
+    text-align: center;
+    color: maroon;
+    font-weight: bold;
+   align-self: center;
+   margin-bottom: 10vh;
+   border-radius: 7%;
+   word-wrap: break-word;
+
+   
+
+}
+#summaryContainer h2{
+    text-align: center;
+    font-weight: bold;
+    color: maroon;
+   font-size: 5vh;
+   align-self: center;
+
+}
+#notesContainer h2{
+    font-size: 5vh;
+    text-align: center;
+    color: maroon;
+    font-weight: bold;
+   align-self: center;
+
+}
+#summaryText{
+
+    text-align: center;
+    color: gold;
+    font-size: 120%;
+
+}
+#notesText{
+    text-align:left;
+    overflow-wrap: normal;
+    color: gold;
+    font-size: 120%;
+    white-space: pre-wrap;
+
+}
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}

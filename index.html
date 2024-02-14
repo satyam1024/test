@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MY PROJECT</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+        <nav>
+                <a href="#">Home</a>
+                <a href="#heading">Projects</a>
+                <a href="https://linktr.ee/satyam_kathait">Link Tree</a>
+                <a href="#aboutHeading">About</a>
+                <a href="#">Contact</a>
+        </nav>
+    
+<div class="main">
+    <div class="bgimage"></div>
+    <div class="intro">
+        <p>Video Insight Generator</p>
+    </div>
+    
+    <div class="imp">
+    <form id="videoForm">
+        <input type="text" id="videoUrl" placeholder="Enter the Url here" required>
+        <button type="button" onclick="generate()">Generate</button>
+    </form>
+    </div>
+<div class="content">
+
+    <div id="summaryContainer">
+        <h2>Summary:</h2>
+        <p id="summaryText">
+        </p>
+    
+    </div>
+    <div id="notesContainer" >
+        <h2>Important points :</h2>
+        <pre id="notesText"> 
+        </pre>
+
+    </div>
+    <div id="error">
+        <h1> Some Error occur .<br>Please try again later</h1>
+    </div>
+</div>
+</div>
+
+
+
+
+
+<footer>
+    <p>&copy; 2023 My Website. All rights reserved.</p>
+</footer>
+
+    <script>
+        async function generate(){
+            generateSummary();
+            generatenotes();
+        }
+        async function generateSummary() {
+            const videoUrl = document.getElementById('videoUrl').value;
+
+            const response = await fetch('http://localhost:3000/generate-summary', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ videoUrl }),
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                const summaryContainer = document.getElementById('summaryContainer');
+                const summaryText = document.getElementById('summaryText');
+
+                summaryText.innerText = data.summary;
+                summaryContainer.style.display = 'inline-block';
+            } else {
+                const error = document.getElementById('error');
+                error.style.display='inline-block'
+                console.error('Failed to generate summary');
+            }
+        }
+        async function generatenotes() {
+            const videoUrl = document.getElementById('videoUrl').value;
+
+            const response = await fetch('http://localhost:3000/generate-notes', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ videoUrl }),
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                const notesContainer = document.getElementById('notesContainer');
+                const notesText = document.getElementById('notesText');
+
+                notesText.innerText = data.summary;
+                notesContainer.style.display = 'inline-block';
+            } else {
+                const error = document.getElementById('error');
+                error.style.display='inline-block'
+                console.error('Failed to generate summary');
+            }
+        }
+    </script>
+</body>
+</html>
