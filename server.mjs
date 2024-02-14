@@ -8,9 +8,7 @@ const port = 3000;
 
 import OpenAI from 'openai';
 
-const openai = new OpenAI({
-  apiKey: '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',
-});
+
 
 
 app.use(bodyParser.json());
